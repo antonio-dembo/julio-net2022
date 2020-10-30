@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Drawing;
+using Console = Colorful.Console;
 
 namespace alomundo
 {
@@ -6,7 +8,9 @@ namespace alomundo
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+
+            Console.WriteLine("Hello World!", Color.Blue);
+            Console.WriteLine("Console in default");
         }
     }
 }
