@@ -47,7 +47,23 @@ namespace classes
             }
         }
 
+        public string Nome{
+            get{return nome;}
+        }
 
+        public string DataDeNascimento{
+            get{ return dataDeNascimento.ToShortDateString();}
+        }
+
+        public int Idade{
+            get{
+                var anoAtual = DateTime.Now.Year;
+                var anoNascimento = dataDeNascimento.Year;
+                return anoAtual - anoNascimento;
+            }
+        }
+
+        public string Cpf{get; private set;} = string.Empty; // propriedade auto-gerada: ele cria automaticamente um campo (privado) para guardar o CPF, só não temos acesso a ele.
 
 
 
