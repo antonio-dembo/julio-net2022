@@ -2,14 +2,14 @@ using System;
 
 namespace Generics
 {
-  public class Utilities
+  public class Utilities<T> where T : IComparable
     {
         public int Max( int a, int b)
         {
           return a > b ? a : b ;
         }
 
-        public T Max<T> (T a, T b) where T : IComparable
+        public T Max (T a, T b)
         {
           // at this time the compiler doesn't know the type of T.
           // so it cannot apply comparison with a and b.
