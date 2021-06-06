@@ -1,5 +1,5 @@
 ﻿using System;
-//using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace delegates
 {
@@ -7,13 +7,24 @@ namespace delegates
     {
         static void Main(string[] args)
         {
+
+            // List<String> names = new List<string>();
+
+            // names.Add("Bruce");
+            // names.Add("Alfred");
+            // names.Add("Tim");
+            // names.Add("Richard");
+
+            // names.ForEach(Print);
+
+
             /* 
             Esse programa usa delegates para guardar referência para outros métodos
             Também é usado para programação orientada a eventos
             
             */
 
-/*             List<String> nomes  = new List<String>{"Júlio", "Ana", "João", "Márcia", "Pedro"};
+/*          List<String> nomes  = new List<String>{"Júlio", "Ana", "João", "Márcia", "Pedro"};
             var umnome = nomes.Find( (n) => n.Length == 3); // parametro: bool metodo(string s) / uma expressão lambda/ método anônimo
             Console.WriteLine(umnome);
 
@@ -39,8 +50,14 @@ namespace delegates
             t1.Aumentar(10);
             Console.WriteLine(t1.TemperaturaAtual);
             t1.Aumentar(10);
+            Console.WriteLine(t1.TemperaturaAtual);
 
             
+        }
+
+        static void Print(string s)
+        {
+            Console.WriteLine(s);
         }
 
         static int Somar (int x, int y)

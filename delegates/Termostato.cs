@@ -7,20 +7,21 @@ namespace delegates
 
         public double TemperaturaAtual {get; private set;}
         public double LimiteSuperior {get; set;}
-
+        private bool alarmTriggeredFlag = false;
         public void Aumentar (double variacao)
         {
             TemperaturaAtual += variacao;
             if (TemperaturaAtual > LimiteSuperior){
                 // gerar um evento avisando outros objetos
-                if (Alarme != null){
-                    Alarme(this);
+                if(!alarmTriggeredFlag){
+                    if (Alarme != null){
+                        Alarme(this);
+                        alarmTriggeredFlag = true;
+                    }
+                    //Alarme?.Invoke(this) ; // null conditional: testa se a variável é null
                 }
-                //Alarme?.Invoke(this) ; // null conditional: testa se a variável é null
-                
             }
         }
-
         
     }
 }
