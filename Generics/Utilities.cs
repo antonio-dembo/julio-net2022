@@ -2,13 +2,24 @@ using System;
 
 namespace Generics
 {
-  public class Utilities<T> where T : IComparable
+  // Interface type Cosntraint
+  // where T : IComparable -> T must be an interface (Icomparable for this demo) or a derived class 
+  // or derived interface.
+
+  // parameterless constructor cosntraint
+  //  where T : new() -> T is an object with a parameterless constructor
+  public class Utilities<T> where T : IComparable , new ()
     {
         public int Max( int a, int b)
         {
           return a > b ? a : b ;
         }
 
+        public void DoSomething(T value)
+        {
+          var obj = new T();
+        }
+        
         public T Max (T a, T b)
         {
           // at this time the compiler doesn't know the type of T.
